@@ -1,4 +1,14 @@
 
 $(document).ready(function() {
-  $('.blog-post').dissemvowel();
+  'use strict';
+
+  // function dissemvowel() {
+  //   console.log('*****test test test ********');
+  // }
+
+  $('#trigger').click(function() {
+    console.log('***** button fired ********');
+  });
+
+  // $('.blog-post').dissemvowel();
 });
