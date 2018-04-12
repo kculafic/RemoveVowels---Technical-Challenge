@@ -2,34 +2,26 @@
 $(document).ready(function() {
   'use strict';
 
-  // function dissemvowel() {
-  //   console.log('*****test test test ********');
-  // }
-  let bp = $('.blog-post').text();
+  let bp = $('.blog-post');
+  let all = document.querySelectorAll(".blog-post");
+
 
   function removeVowels(content){
-    let holder = [];
+    let removedContent;
+    content.forEach(function(element) {
 
-  //   for (let i=0; i<content.length; i++) {
-  //     // console.log(content[i]);
-  //
-  //     if (content[i].toString() !== 'A' || 'a' || 'E' || 'e' || 'I' || 'i' || 'O' || 'o' || 'U' || 'u' || 'Y' || 'y') {
-  //       holder.push(content[i]);
-  //     }
-  //   }
-  //   console.log(holder);
-  //   let noMoreVowels = holder.join('');
-  //   console.log(noMoreVowels);
-  //   $('.blog-post').append(noMoreVowels);
-  // }
+      let removedContent = element.textContent.replace(/[aeiou]/gi, '');
 
-
+      console.log(removedContent);
+      $('.blog-post').append(removedContent);
+    })
+  }
 
   $('#trigger').click(function() {
     console.log('***** button fired ********');
 
     // console.log(bp);
-    removeVowels(bp);
+    removeVowels(all);
   });
 
   // $('.blog-post').dissemvowel();
