@@ -2,29 +2,21 @@
 $(document).ready(function() {
   'use strict';
 
-  let bp = $('.blog-post');
-  let all = document.querySelectorAll(".blog-post");
-
+  let docContent = document.querySelectorAll(".blog-post");
 
   function removeVowels(content){
-    console.log(content);
     let removedContent;
     content.forEach(function(element) {
+      let childrenArr = element.children;
 
-      let removedContent = element.textContent.replace(/[aeiou]/gi, '');
-
-      element.textContent = removedContent;
-      console.log(removedContent);
+      for (let i=0; i<childrenArr.length; i++) {
+        let noMoreVowels = childrenArr[i].innerText.replace(/[aeiou]/gi, '');
+        childrenArr[i].innerText = noMoreVowels;
+      }
     })
-    // document.getElementById('display').innerHTML = removedContent;
   }
 
   $('#trigger').click(function() {
-    console.log('***** button fired ********');
-
-    // console.log(bp);
-    removeVowels(all);
+    removeVowels(docContent);
   });
-
-  // $('.blog-post').dissemvowel();
 });
