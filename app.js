@@ -7,14 +7,16 @@ $(document).ready(function() {
 
 
   function removeVowels(content){
+    console.log(content);
     let removedContent;
     content.forEach(function(element) {
 
       let removedContent = element.textContent.replace(/[aeiou]/gi, '');
 
+      element.textContent = removedContent;
       console.log(removedContent);
-      $('.blog-post').append(removedContent);
     })
+    // document.getElementById('display').innerHTML = removedContent;
   }
 
   $('#trigger').click(function() {
