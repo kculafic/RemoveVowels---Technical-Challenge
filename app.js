@@ -19,4 +19,8 @@ $(document).ready(function() {
   $('#trigger').click(function() {
     removeVowels(docContent);
   });
+
+  $('#refresh').click(function() {
+    window.location.reload();
+  });
 });
