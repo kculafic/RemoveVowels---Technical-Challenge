@@ -5,7 +5,6 @@ $(document).ready(function() {
   let docContent = document.querySelectorAll(".blog-post");
 
   function removeVowels(content){
-    let removedContent;
     content.forEach(function(element) {
       let childrenArr = element.children;
 
